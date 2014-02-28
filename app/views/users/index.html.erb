@@ -1,0 +1,39 @@
+<% @sep="-" %><% @title="Management" %><% @management="class=active" %>
+<h1>Daftar Karyawan</h1>
+<p id="notice"><%= notice %></p>
+<div class="page-heading">
+    <%= link_to new_user_path, :class => "btn btn-success pull-right" do %>
+      Tambah Karyawan <span class="glyphicon glyphicon-plus"></span>
+    <% end %>
+    <a href="os-order-add.html" class="btn btn-info pull-right"><span class="glyphicon glyphicon-list-alt"></span>  Buat SPT</a>                        
+</div>
+<div class="clearfix"></div>
+<div class="page-table">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nama Depan</th>
+      <th>Nama Belakang</th>
+      <th>Jabatan</th>
+      <th>Email</th>
+      <th colspan="3"><center>Opsi</center></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= user.nama_depan %></td>
+        <td><%= user.nama_belakang %></td>
+        <td><%= user.jabatan %></td>
+        <td><%= user.email %></td>
+        <td><%= link_to 'Lihat', user %></td>
+        <td><%= link_to 'Ubah', edit_user_path(user) %></td>
+        <td><%= link_to 'Hapus', user, method: :delete, data: { confirm: 'Apakah anda yakin?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>

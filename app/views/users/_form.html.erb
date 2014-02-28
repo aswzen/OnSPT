@@ -1,0 +1,52 @@
+<!-- <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+<ul>
+<% @user.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+<% end %>
+</ul> -->
+
+<%= form_for(@user) do |f| %>
+  <div class="row">           
+      <div class="col-md-4 col-md-offset-4">
+
+          <!-- alert notification -->
+           
+            <% if @user.errors.any? %>
+            <div class="alert alert-danger"> 
+            <%= errors_for(@user, "<b>Gagal menambah data karyawan</b>").html_safe %>
+            </div>
+            <% end %>
+        
+          <!-- end: alert notification -->
+
+          <h3 class="form-title"><%= @judulform %></h3>
+
+          <form role="form">
+              <div class="form-group">
+                  <label for="nama_depan"><%= f.label :nama_depan %></label>
+                  <%= f.text_field :nama_depan, :class => 'form-control', :placeholder => 'Nama depan' %>
+              </div>
+              <div class="form-group">
+                  <label for="nama_belakang"><%= f.label :nama_belakang %></label>
+                   <%= f.text_field :nama_belakang, :class => 'form-control', :placeholder => 'Nama belakang' %>
+              </div>
+              <div class="form-group">
+                  <label for="jabatan"><%= f.label :jabatan %></label>               
+                      <%= nations = {'Staf' => 'Staf', 'Karyawan' => 'Karyawan', 'Manager' => 'Manager'} 
+                      list = nations.sort 
+                       f.select :jabatan, list, {}, :class => 'form-control' %>
+              </div>
+              <div class="form-group">
+                  <label for="email"><%= f.label :email %></label>
+                  <div class="input-group">
+                  <span class="input-group-addon">@</span>
+                  <%= f.text_field :email, :class => 'form-control', :placeholder => 'Email' %>
+                  </div>
+              </div>                                                             
+              <%= f.submit 'Simpan', :class => 'btn btn-success' %> 
+          </form>
+
+      </div><!-- end: col-md-4 col-md-offset-4 -->
+  </div><!-- end: .row -->
+<% end %>
