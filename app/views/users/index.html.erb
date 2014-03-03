@@ -1,6 +1,6 @@
 <% @sep="-" %><% @title="Management" %><% @management="class=active" %>
 <h1>Daftar Karyawan</h1>
-<p id="notice"><%= notice %></p>
+<%= content_tag :div, notice, :class => 'alert alert-success' %>
 <div class="page-heading">
     <%= link_to new_user_path, :class => "btn btn-success pull-right" do %>
       Tambah Karyawan <span class="glyphicon glyphicon-plus"></span>
@@ -37,3 +37,6 @@
   </tbody>
 </table>
 </div>
+    <script type="text/javascript">
+        $('.alert:empty').hide();
+    </script>
