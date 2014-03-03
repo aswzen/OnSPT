@@ -11,10 +11,15 @@ class UsersController < ApplicationController
   def new
     @user = User.new
     @judulform = 'Karyawan Baru' 
+     # %w(Karyawan Staf Manajer).each do |jabatans| 
+     #    @user.build(jabatan: jabatans) 
+     # end 
   end
 
-  #def edit
-  #end
+  def edit
+    @judulform = 'Ubah detail karyawan'
+  end
+
 
   def create
     @user = User.new(user_params)
@@ -31,6 +36,7 @@ class UsersController < ApplicationController
   end
 
   def update
+
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'Data karyawan sukses diubah.' }

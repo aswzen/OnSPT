@@ -8,4 +8,8 @@ FactoryGirl.define do
 	f.jabatan  { ["Karyawan", "Staf", "Manager"].sample }
 	f.email 'masripo@kaskus.kusam' 
 	end 
+
+	factory :invalid_user, parent: :user do |f| 
+		f.nama_depan nil 
+	end 
 end 
