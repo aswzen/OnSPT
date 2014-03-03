@@ -20,12 +20,15 @@ describe User do
 		FactoryGirl.build(:user, email: nil).should_not be_valid 
 	end
 
-	it "fungsi pencarian harus berjalan dengan baik" do
-		# AGUS = FactoryGirl.build(:user, nama_depan: "AGUS") 
-		# jones = FactoryGirl.build(:user, nama_depan: "Jones") 
-		# johnson = FactoryGirl.build(:user, nama_depan: "Johnson") 
-		# User.pencarian("AGUS").should == AGUS 
-	end
-
+	it "fungsi pencarian harus berjalan dengan baik" do 
+		AGUS =  FactoryGirl.create(:user, nama_depan: "AGUS")
+		#pp AGUS.nama_depan.should == User.by_letter('AGUS').nama_depan
+		tes = User.pencarian('AGUS')
+			if tes == nil
+		 	 	tes.should_not be_nil
+		  	else
+		  		expect(tes.nama_depan).to eq(AGUS.nama_depan)
+			end
+	end 
 end 
 

@@ -6,6 +6,6 @@ FactoryGirl.define do
 	f.nama_depan { Faker::Name.first_name }
 	f.nama_belakang { Faker::Name.last_name } 
 	f.jabatan  { ["Karyawan", "Staf", "Manager"].sample }
-	f.email 'masripo@kaskus.usaa' 
+	f.email 'masripo@kaskus.kusam' 
 	end 
 end 
