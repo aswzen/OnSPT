@@ -21,9 +21,9 @@ describe User do
 	end
 
 	it "fungsi pencarian harus berjalan dengan baik" do 
-		AGUS =  FactoryGirl.create(:user, nama_depan: "AGUS")
+		AGUS =  FactoryGirl.create(:user, nama_depan: "ANDI")
 		#pp AGUS.nama_depan.should == User.by_letter('AGUS').nama_depan
-		tes = User.pencarian('AGUS')
+		tes = User.pencarian('ANDI')
 			if tes == nil
 		 	 	tes.should_not be_nil
 		  	else
