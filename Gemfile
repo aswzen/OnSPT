@@ -16,6 +16,8 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'launchy'
+  gem "webrat"
+   gem 'capybara', '2.1.0'
 end
 
 group :test do

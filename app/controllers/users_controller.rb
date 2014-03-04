@@ -21,6 +21,7 @@ class UsersController < ApplicationController
 
   def edit
     @judulform = 'Ubah detail karyawan'
+    @user = User.find(params[:id]) 
   end
 
 
