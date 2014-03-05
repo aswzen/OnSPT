@@ -18,6 +18,7 @@ group :development, :test do
   gem 'launchy'
   gem "webrat"
    gem 'capybara', '2.1.0'
+   gem "schema_to_scaffold", "~> 0.5.0"
 end
 
 group :test do

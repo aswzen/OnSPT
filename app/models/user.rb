@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-
+	has_many :spt_participants
 	before_save { self.email = email.downcase }
 	before_save { self.nama_depan = nama_depan.upcase }
 	before_save { self.nama_belakang = nama_belakang.upcase }

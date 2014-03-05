@@ -1,0 +1,44 @@
+<%= form_for(@spt) do |f| %>
+  <div class="row">           
+      <div class="col-md-4 col-md-offset-4">
+
+          <!-- alert notification -->
+           
+            <% if @spt.errors.any? %>
+            <div class="alert alert-danger"> 
+            <%= errors_for(@spt, "<b>Gagal menambah data tugas</b>").html_safe %>
+            </div>
+            <% end %>
+        
+          <!-- end: alert notification -->
+
+          <h3 class="form-title"><%= @judulform %></h3>
+
+          <form role="form">
+              <div class="form-group">
+                  <label for="tempat_tujuan"><%= f.label :tempat_tujuan %></label>
+                  <%= f.text_field :tempat_tujuan, :class => 'form-control', :placeholder => 'Tempat tujuan' %>
+              </div>
+              <div class="form-group">
+                  <label for="durasi_waktu"><%= f.label :durasi_waktu %></label>
+                   <%= f.text_field :durasi_waktu, :class => 'form-control', :placeholder => 'Durasi Waktu' %>
+              </div>
+              <div class="form-group">
+                  <label for="jenis_transportasi"><%= f.label :jenis_transportasi %></label>               
+                      <%= trans = {'Mobil / Bus' => 'Mobil / Bus', 'Kereta Api' => 'Kereta Api', 'Pesawat' => 'Pesawat', 'Jalan Kaki' => 'Jalan Kaki'} 
+                      list = trans.sort 
+                       f.select :jenis_transportasi, list, {}, :class => 'form-control' %>
+              </div>
+              <div class="form-group">
+                  <label for="maksud_tugas"><%= f.label :maksud_tugas %></label>
+                  <div class="input-group">
+                  <span class="input-group-addon">?</span>
+                  <%= f.text_area :maksud_tugas, :class => 'form-control', :placeholder => 'Maksud Tugas' %>
+                  </div>
+              </div>                                                             
+              <%= f.submit 'Simpan', :class => 'btn btn-success' %> 
+          </form>
+
+      </div><!-- end: col-md-4 col-md-offset-4 -->
+  </div><!-- end: .row -->
+<% end %>

@@ -50,8 +50,9 @@
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li <%= @home %> ><%= link_to "HOME", "/" %></li>
-                    <li <%= @management %>><%= link_to "MANAGEMENT", :controller => :users, :action => :index %></li>
-                    <li <%= @generator %>><%= link_to "GENERATOR", :controller => :generator, :action => :index %></li>
+                    <li <%= @management %>><%= link_to "KARYAWAN", :controller => :users, :action => :index %></li>
+                    <li <%= @generator %>><%= link_to "SURAT", :controller => :generator, :action => :index %></li>
+                    <li <%= @assign %>><%= link_to "TUGAS", :controller => :spts, :action => :index %></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>

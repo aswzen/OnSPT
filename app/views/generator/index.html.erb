@@ -1,7 +1,47 @@
-<% @sep="-" %><% @title="Generator Surat" %><% @generator="class=active" %>
-<h1>Generator</h1>
-<ul>
-	<li>Generator Surat Perintah Kerja</li>
-	<li>Generator Surat Cuti</li>
-	<li>Generator Surat Peminjaman</li>
-</ul>
+<% @sep="-" %><% @title="Surat Perintah Kerja" %><% @generator="class=active" %>
+
+<h1>Daftar Surat Tugas</h1>
+<%= content_tag :div, notice, :class => 'alert alert-success' %>
+<div class="page-heading">
+    <%= link_to "generator/genspt", :class => "btn btn-success pull-right" do %>
+      Buat Surat <span class="glyphicon glyphicon-plus"></span>
+    <% end %>                      
+</div>
+<div class="clearfix"></div>
+<div class="page-table">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID Surat</th>
+      <th>Nama Karyawan</th>
+      <th>Jabatan</th>
+      <th>Email</th>
+      <th>Maksud Tugas</th>
+      <th>Lama Tugas</th>
+      <th colspan="2"><center>Opsi</center></th>
+      <th><center>Generate Satuan</center></th>
+      <th><center>Generate Multi</center></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sptall.each do |sptall| %>
+      <tr>
+        <td><%= sptall.id %></td>
+        <td><%= sptall.user.nama_depan + " " + sptall.user.nama_belakang + " (ID : " + sptall.user_id.to_s + ")" %></td>
+        <td><%= sptall.user.jabatan %></td>
+        <td><%= sptall.user.email %></td>
+        <td><i><%= sptall.spt.maksud_tugas %></i></td>
+        <td><%= sptall.spt.durasi_waktu %></td>
+        <td><%= link_to 'Ubah' %></td>
+        <td><%= link_to 'Hapus', method: :delete, data: { confirm: 'Apakah anda yakin?' } %></td>
+        <td align="center"><%= link_to "Lihat" , "generator/surat/" + sptall.id.to_s, :class => 'btn btn-success' %></td>
+        <td align="center"><%= link_to "No."+sptall.spt.id.to_s , "generator/suratmulti/" + sptall.spt.id.to_s, :class => 'btn btn-primary' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+    <script type="text/javascript">
+        $('.alert:empty').hide();
+    </script>

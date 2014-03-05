@@ -1,0 +1,77 @@
+<div style="margin:20px 70px 20px 70px;padding:20px;border: 1px dashed gray">
+
+  <div style="text-align:left"><%= image_tag 'logo.gif',:title => 'Logo Ontel',  :align => 'left' %><div style="font:30px Ubuntu ;">PT. ONTEL STUDIO</div>
+SOFTWARE HOUSE - IT CONSULTANT<br>
+Alamat : Jl. Karang Wuni, No 1 Karang Wuni, Pogung Raya Telp. 0274 909092<br>
+<hr style="border:1px solid black"></div>
+<div style="text-align:center;font:20px Ubuntu ;" >SURAT PERINTAH TUGAS</div>
+Nomor : <%= @sptall.spt.id %>/SPT/ONTELSTUDIO/2014<br>
+<br>
+<br>
+Diperintahkan kepada :<br>
+<br>
+<div style="text-align:left;padding-left:40px;">
+<table style="line-height:30px;">
+<tr>
+  <td style="width:200px">Nama Lengkap</td>
+  <td>  <%= @sptall.user.nama_depan %> <%= @sptall.user.nama_belakang %>
+</td>
+</tr>
+<tr>
+  <td>Jabatan</td>
+  <td> <%= @sptall.user.jabatan %> </td>
+</tr>
+<tr>
+  <td>Email</td>
+  <td> <%= @sptall.user.email %> </td>
+</tr>
+</table>
+</div>
+<br>
+untuk melaksanakan tugas dengan rincian sebagai berikut
+<br><br>
+<div style="text-align:left;padding-left:40px;">
+<table style="line-height:30px;">
+<tr>
+  <td style="width:200px">Lokasi Tugas</td>
+  <td> <%= @sptall.spt.tempat_tujuan %> </td>
+</tr>
+<tr>
+  <td>Lama Tugas</td>
+  <td> <%= @sptall.spt.durasi_waktu %> </td>
+</tr>
+<tr>
+  <td>Transportasi</td>
+  <td> <%= @sptall.spt.jenis_transportasi %> </td>
+</tr>
+<tr>
+  <td>Maksud Tugas</td>
+  <td> <%= @sptall.spt.maksud_tugas %>  </td>
+</tr>
+</table>
+
+<br></div>
+____________________________________________________________<br>
+
+Catatan :<br>
+Apabila Tugas ini tidak dilaksanakan sesuai perintah, segala sesuatunya menjadi tanggung jawab penerima tugas.<br><br><br>
+
+  <div style="height:140px;padding:20px">
+    <div style="text-align:center;width:50%;float:left">
+    <b>Yang ditugaskan</b><br>
+    <br>
+    <br>
+    <br>
+    <br>
+      <%= @sptall.user.nama_depan %> <%= @sptall.user.nama_belakang %><br><br>
+    </div>
+    <div style="text-align:center;width:50%;float:left">
+    <b>Pimpinan</b><br>
+    <br>
+    <br>
+    <br>
+    <br>
+      Mas Onggo ?<br><br>
+    </div>
+  </div>
+</div>

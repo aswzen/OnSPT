@@ -11,7 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140226043717) do
+ActiveRecord::Schema.define(version: 20140305035524) do
+
+  create_table "spt_participants", force: true do |t|
+    t.integer  "spt_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "spts", force: true do |t|
+    t.string   "tempat_tujuan"
+    t.string   "durasi_waktu"
+    t.string   "jenis_transportasi"
+    t.text     "maksud_tugas"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tugas", force: true do |t|
+    t.string   "tempat_tujuan"
+    t.string   "durasi_waktu"
+    t.string   "jenis_transportasi"
+    t.text     "maksud_tugas"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "nama_depan"

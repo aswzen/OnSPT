@@ -1,3 +1,4 @@
+<% @sep="-" %><% @title="Lihat Detail Karyawan" %><% @management="class=active" %>
 <p id="notice"><%= notice %></p>
 
 <ul style="list-style: none;padding-left:0px;">
@@ -26,5 +27,5 @@
   <%= @user.email %>
 </li>
 </ul>
-<%= link_to 'Ubah', edit_user_path(@user) %> |
-<%= link_to 'Kembali', users_path %>
+<%= link_to 'Ubah', edit_user_path(@user), :class => 'btn btn-warning'  %> |
+<%= link_to 'Kembali', users_path, :class => 'btn btn-warning'  %>

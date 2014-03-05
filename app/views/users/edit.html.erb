@@ -1,4 +1,6 @@
+<% @sep="-" %><% @title="Ubah Detail Karyawan" %><% @management="class=active" %>
+
 <%= render 'form' %>
 
-<%= link_to 'Lihat', @user %> |
-<%= link_to 'Kembali', users_path %>
+<%= link_to 'Lihat', @user, :class => 'btn btn-warning' %> |
+<%= link_to 'Kembali', users_path, :class => 'btn btn-warning' %>

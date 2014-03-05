@@ -1,5 +1,13 @@
 SEMan::Application.routes.draw do
- resources :generator
+ # get "/generator/:id/genspt" => "generator#genspt"
+  resources :generator do
+    collection do
+      get :genspt
+      get "/surat/:id", :to => "generator#surat"
+      get "/suratmulti/:id", :to => "generator#suratmulti"
+    end
+  end 
+  resources :spts
   resources :users
   resources :dashboard
   # The priority is based upon order of creation: first created -> highest priority.

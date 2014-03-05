@@ -1,0 +1,33 @@
+<% @sep="-" %><% @title="Lihat Detail Tugas" %><% @assign="class=active" %>
+<p id="notice"><%= notice %></p>
+
+<ul style="list-style: none;padding-left:0px;">
+<li>
+  <strong>ID Tugas:</strong>
+  <%= @spt.id %>
+</li>
+
+<li>
+  <strong>Tempat tujuan:</strong>
+  <%= @spt.tempat_tujuan %>
+</li>
+
+<li>
+  <strong>Durasi:</strong>
+  <%= @spt.durasi_waktu %>
+</li>
+
+<li>
+  <strong>Transportasi:</strong>
+  <%= @spt.jenis_transportasi %>
+</li>
+
+<li>
+  <strong>Maksud tugas:</strong>
+  <%= @spt.maksud_tugas %>
+</li>
+
+</ul>
+
+<%= link_to 'Ubah', edit_spt_path(@spt), :class => 'btn btn-warning'  %> |
+<%= link_to 'Kembali', spts_path, :class => 'btn btn-warning'  %>
