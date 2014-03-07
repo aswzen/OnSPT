@@ -29,9 +29,9 @@
         <td><%= spt.durasi_waktu %></td>
         <td><%= spt.jenis_transportasi %></td>
         <td><%= spt.maksud_tugas %></td>
-        <td><%= link_to 'Lihat', spt %></td>
-        <td><%= link_to 'Ubah', edit_spt_path(spt) %></td>
-        <td><%= link_to 'Hapus', spt, method: :delete, data: { confirm: 'Apakah anda yakin?' } %></td>
+        <td><%= link_to 'Lihat', spt, :class => 'btn btn-info btn-xs' %></td>
+        <td><%= link_to 'Ubah', edit_spt_path(spt), :class => 'btn btn-primary btn-xs' %></td>
+        <td><%= link_to 'Hapus', spt, method: :delete, data: { confirm: 'Apakah anda yakin?' }, :class => 'btn btn-danger btn-xs' %></td>
       </tr>
     <% end %>
   </tbody>

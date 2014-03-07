@@ -3,6 +3,8 @@ SEMan::Application.routes.draw do
   resources :generator do
     collection do
       get :genspt
+      #match '/buatkan' => 'generator#buatkan', via: :post
+      post :buatkan
       get "/surat/:id", :to => "generator#surat"
       get "/suratmulti/:id", :to => "generator#suratmulti"
     end

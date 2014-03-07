@@ -1,36 +1,33 @@
-
-<%= form_for @sptsall, url: {action: "buatkan"}, html: {class: ""} do |f| %>
+  <%= form_for @sptsall, :url => "buatkan"  do |f| %>
   <div class="row">           
       <div class="col-md-4 col-md-offset-4">
 
           <!-- alert notification -->
-           
-            <% if @sptsall.errors.any? %>
+           <% if @sptsall.errors.any? %>
             <div class="alert alert-danger"> 
             <%= errors_for(@sptsall, "<b>Gagal menambah data surat</b>").html_safe %>
             </div>
             <% end %>
-        
+
           <!-- end: alert notification -->
 
           <h3 class="form-title"><%= @judulform %></h3>
 
           <form role="form">
               <div class="form-group">
-                   <%= label_tag(:spt_id, "ID Tugas") %>
-   <%= f.collection_select :spt_id, Spt.all,:id,:tempat_tujuan %>
+                  <label for="id_surat">Pilih Tugas</label>
+                  <%= collection_select(:spt_id, 0, Spt.all, :id, :id, {}, {:class => 'form-control'}) %> 
               </div>
+        
               <div class="form-group">
-                  <%= label_tag(:user_id, "ID Karyawan") %>
- <%= f.collection_select :user_id, User.all,:id,:nama_depan %>
+                  <label for="id_user">Pilih Karyawan</label>               
+                
+              <%= collection_select(:user_id, :id, User.all, :id, :nama_depan, {}, {:class => 'form-control'}) %>
               </div>
               <div class="form-group">
                  
-              </div>
-              <div class="form-group">
-                
               </div>                                                             
-              <%= f.submit 'Simpan', :class => 'btn btn-success' %> 
+              <%= submit_tag("Simpan", :class => 'btn btn-success') %>
           </form>
 
       </div><!-- end: col-md-4 col-md-offset-4 -->

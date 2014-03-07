@@ -1,7 +1,7 @@
 <% @sep="-" %><% @title="Surat Perintah Kerja" %><% @generator="class=active" %>
 
 <h1>Daftar Surat Tugas</h1>
-<%= content_tag :div, notice, :class => 'alert alert-success' %>
+<%= content_tag :div, @info, :class => 'alert alert-success' %>
 <div class="page-heading">
     <%= link_to "generator/genspt", :class => "btn btn-success pull-right" do %>
       Buat Surat <span class="glyphicon glyphicon-plus"></span>
@@ -25,7 +25,7 @@
   </thead>
 
   <tbody>
-    <% @sptall.each do |sptall| %>
+    <% @sptalls.each do |sptall| %>
       <tr>
         <td><%= sptall.id %></td>
         <td><%= sptall.user.nama_depan + " " + sptall.user.nama_belakang + " (ID : " + sptall.user_id.to_s + ")" %></td>
@@ -33,8 +33,7 @@
         <td><%= sptall.user.email %></td>
         <td><i><%= sptall.spt.maksud_tugas %></i></td>
         <td><%= sptall.spt.durasi_waktu %></td>
-        <td><%= link_to 'Ubah' %></td>
-        <td><%= link_to 'Hapus', method: :delete, data: { confirm: 'Apakah anda yakin?' } %></td>
+        <td><%= link_to 'Ubah', @user,  :class => 'btn btn-primary btn-xs' %></td><td><%= link_to 'Hapus', "generator/destroy/"+sptall.id.to_s, method: :delete, data: { confirm: 'Apakah anda yakin?' }, :class => 'btn btn-danger btn-xs' %></td>
         <td align="center"><%= link_to "Lihat" , "generator/surat/" + sptall.id.to_s, :class => 'btn btn-success' %></td>
         <td align="center"><%= link_to "No."+sptall.spt.id.to_s , "generator/suratmulti/" + sptall.spt.id.to_s, :class => 'btn btn-primary' %></td>
       </tr>

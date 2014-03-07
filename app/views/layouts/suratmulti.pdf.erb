@@ -1,11 +1,13 @@
- <div style="float:left"><%= link_to request.original_url + ".pdf", :class => "btn btn-success pull-right" do %>Eksport ke PDF<% end %><a onclick="return printdong();" href="" class="btn btn-warning pull-right" >Print</a></div>
 
-<div id="print" style="margin:60px 70px 20px 70px;padding:20px;border: 1px dashed gray">
-
-  <div style="text-align:left"><%= image_tag 'logo.gif',:title => 'Logo Ontel',  :align => 'left' %><div style="font:30px Ubuntu ;">PT. ONTEL STUDIO</div>
-SOFTWARE HOUSE - IT CONSULTANT<br>
-Alamat : Jl. Karang Wuni, No 1 Karang Wuni, Pogung Raya Telp. 0274 909092<br>
-<hr style="border:1px solid black"></div>
+<div id="print" style="margin:10px;">
+  <div style="float:left;width:20px;height:80px;"><%= wicked_pdf_image_tag 'logo.gif' %></div>
+  <div style="float:right;height:80px;margin-left:60px">
+    <div style="font:30px Ubuntu ;">PT. ONTEL STUDIO</div>
+    SOFTWARE HOUSE - IT CONSULTANT<br>
+    Alamat : Jl. Karang Wuni, No 1 Karang Wuni, Pogung Raya Telp. 0274 909092<br>
+</div>
+<div style="float:left">
+<hr style="border:1px solid black">
 <div style="text-align:center;font:20px Ubuntu ;" >SURAT PERINTAH TUGAS</div>
 <br>  
 Nomor : <%= @sptall.spt.id %>/SPT/ONTELSTUDIO/2014<br>
@@ -79,7 +81,7 @@ Apabila Tugas ini tidak dilaksanakan sesuai perintah, segala sesuatunya menjadi 
     </div>
     <% end %>
     <div style="text-align:center;width:50%;float:right">
-    <b>Pimpinan</b><br>
+     <br><b>Pimpinan</b><br>
     <br>
     <br>
     <br>
@@ -88,12 +90,4 @@ Apabila Tugas ini tidak dilaksanakan sesuai perintah, segala sesuatunya menjadi 
     </div>
   </div>
 </div>
-<script type="text/javascript">
-function printdong(){
-  var printEle = document.getElementById("print");
-  printEle.style.border="0px #FF0000 solid";
-  //alert(printEle);
-  var printWin = window.open("");  printWin.document.write(printEle.outerHTML)
-  printWin.print();  //printWin.close();
-}
-</script>
+</div>

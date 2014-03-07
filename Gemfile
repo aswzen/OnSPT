@@ -19,6 +19,14 @@ group :development, :test do
   gem "webrat"
    gem 'capybara', '2.1.0'
    gem "schema_to_scaffold", "~> 0.5.0"
+   #gem 'wkhtmltopdf'
+   #gem 'pdfkit'
+   #gem 'pdf-writer'
+   #gem "prawnto", "~> 0.1.1"
+   #gem 'prawn'
+   gem 'wkhtmltopdf-binary'
+   gem 'wicked_pdf'
+
 end
 
 group :test do
